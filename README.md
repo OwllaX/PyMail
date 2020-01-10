@@ -5,9 +5,8 @@ Send emails with Python and its library called smtplib of easy way
 --Editing--
 
 ### Prerequisites
-Install Python
-  You can get it on the next website: https://www.python.org/downloads/
-Use the console or GUI
+* Install Python. You can get it on the next website: https://www.python.org/downloads/
+* Use the console or GUI
 --Editing--
 
 ### Installing
@@ -18,7 +17,7 @@ You can run it on the file 'Testing.py' and the path is:
 ```
 ../PyMail/src/Testing.py
 ```
-But first, you need to configure someones parameters
+But first, you need to configure some parameters
 ```
 HOST_ADDRESS = 'SMTP.EXAMPLE.COM' # Set the smtp address
 PORT_SMTP = 0 # Set the port number
@@ -35,7 +34,7 @@ Finally, in the file 'Testing.py' just edit ...
 ```
 add_body('This is a test') # Add the text of the body
 add_ToAddress('toAddress@example.com') # Add the address to who will be sent the email
-add_Subject('Esto es una prueba html') # Add the subject of the email
+add_Subject('Testing') # Add the subject of the email
 ```
 And run it!
 
