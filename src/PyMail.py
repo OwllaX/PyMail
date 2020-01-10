@@ -1,18 +1,33 @@
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
+from Config import *
 
 msg = MIMEMultipart()
-msg['From'] = 'axel72avs@outlook.com'
-msg['To'] = 'axel72avs@gmail.com'
-msg['Subject'] = 'Esto es una prueba'
+msg['From'] = MY_ADDRESS
+if REPLY_ADDRESS != '':
+    msg.add_header('reply-to', REPLY_ADDRESS)
 
-body = 'Esto es una prueba de funcionamiento'
-msg.attach(MIMEText(body,'plain'))
-print(msg)
+#Add the address to who will be send
+def add_ToAddress(toAddress):
+    msg['To'] = toAddress
 
-server = smtplib.SMTP('SMTP.Office365.com', 587)
-server.starttls()
-server.login('axel72avs@outlook.com', 'fivrqkrvcocwvmae')
-server.sendmail(msg['From'], msg['To'], msg.as_string())
-server.quit()
+#Add the subject of the email
+def add_Subject(subject):
+    msg['Subject'] = subject
+
+#Add the body of the email
+def add_body(text):
+    msg.attach(MIMEText(text,TYPE_MIMETEXT))
+
+#This will send the email
+def send_mail():
+    try:
+        server = smtplib.SMTP(HOST_ADDRESS, PORT_SMTP)
+        server.starttls()
+        server.login(MY_ADDRESS, MY_PASSWORD)
+        server.sendmail(msg['From'], msg['To'], msg.as_string())
+        server.quit()
+        return True
+    except Exception as e:
+        return False
