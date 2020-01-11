@@ -35,6 +35,7 @@ Finally, in the file 'Testing.py' just edit ...
 add_body('This is a test') # Add the text of the body
 add_ToAddress('toAddress@example.com') # Add the address to who will be sent the email
 add_Subject('Testing') # Add the subject of the email
+add_file('attachment') # Add one or more files in the email with the repetition of this function
 ```
 And run it!
 
