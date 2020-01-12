@@ -7,10 +7,10 @@ Send emails with Python and its library called smtplib of easy way
 ### Prerequisites
 * Install Python. You can get it on the next website: https://www.python.org/downloads/
 * Use the console or GUI
---Editing--
+* --Editing--
 
 ### Installing
---Editing--
+* Just need to have a system with python, put all this library in your project and follow the steps of **Running the tests**
 
 ## Running the tests
 You can run it on the file 'Testing.py' and the path is:
@@ -32,10 +32,10 @@ All these parameters are in the file Config.py and the path ...
 ```
 Finally, in the file 'Testing.py' just edit ...
 ```
-add_body('This is a test') # Add the text of the body
-add_ToAddress('toAddress@example.com') # Add the address to who will be sent the email
-add_Subject('Testing') # Add the subject of the email
-add_file('attachment') # Add one or more files in the email with the repetition of this function
+add_body('This is a test') # Add the text of the body.
+add_ToAddress('toAddress@example.com') # Add the address to who will be sent the email, can be one or more addresses.
+add_Subject('Testing') # Add the subject of the email.
+add_file('attachment') # Add one or more files in the email with the repetition of this function.
 ```
 And run it!
 
@@ -49,7 +49,7 @@ Just need python in whatever system that supports it
 * [atom-run-python] (https://atom.io/packages/atom-python-run) - Package for Run Python on Atom
 
 ## Contributing
---Editing--
+...
 
 ## Versioning
 --Editing--

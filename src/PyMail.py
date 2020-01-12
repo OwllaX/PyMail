@@ -30,9 +30,15 @@ def setFiles():
                 part.add_header('content-disposition', f"attachment; filename={filename}")
                 msg.attach(part)
 
-#Add the address to who will be send
+all_Addresses = [] #Save all 'To' addresses for the email
+
+#Add the addresses to who will be send
 def add_ToAddress(toAddress):
-    msg['To'] = toAddress
+    all_Addresses.append(toAddress)
+
+#This function is only to give format to the message
+def setAllAddresses():
+    msg['To'] = ";".join(all_Addresses)
 
 #Add the subject of the email
 def add_Subject(subject):
@@ -48,8 +54,9 @@ def send_mail():
         server = smtplib.SMTP(HOST_ADDRESS, PORT_SMTP)
         server.starttls()
         server.login(MY_ADDRESS, MY_PASSWORD)
+        setAllAddresses()
         setFiles()
-        server.sendmail(msg['From'], msg['To'], msg.as_string())
+        server.sendmail(msg['From'], all_Addresses, msg.as_string())
         server.quit()
         return True
     except Exception as e:
