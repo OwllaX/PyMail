@@ -1,4 +1,4 @@
-![PyMail](https://raw.github.com/OwllaX/master/images/PyMail.png)
+![PyMail](https://github.com/OwllaX/PyMail/blob/master/images/PyMail.png)
 # PyMail
 Send emails with Python and its library called 'smtplib' of easy way.
 
