@@ -18,7 +18,7 @@ You can run it on the file 'Testing.py' and the path is:
 ../PyMail/src/Testing.py
 ```
 But first, you need to configure some parameters
-```
+```python
 HOST_ADDRESS = 'SMTP.EXAMPLE.COM' # Set the smtp address
 PORT_SMTP = 0 # Set the port number
 MY_ADDRESS = 'youraddress@example.com' # Set your address to send the email
@@ -31,11 +31,15 @@ All these parameters are in the file Config.py and the path ...
 ../PyMail/src/Config.py
 ```
 Finally, in the file 'Testing.py' just edit ...
-```
-add_body('This is a test') # Add the text of the body.
-add_ToAddress('toAddress@example.com') # Add the address to who will be sent the email, can be one or more addresses.
-add_Subject('Testing') # Add the subject of the email.
-add_file('attachment') # Add one or more files in the email with the repetition of this function.
+```python
+# Add the text of the body.
+add_body('This is a test')
+# Add the address to who will be sent the email, can be one or more addresses.
+add_ToAddress('toAddress@example.com')
+# Add the subject of the email.
+add_Subject('Testing')
+# Add one or more files in the email with the repetition of this function.
+add_file('attachment')
 
 #The function 'send_mail()' returns a boolean value, where 'True' is 'sent message' and 'False' is 'Not sent message'
 if send_mail():
